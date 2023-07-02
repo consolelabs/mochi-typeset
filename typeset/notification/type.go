@@ -2,12 +2,12 @@ package typeset
 
 // Enum used to identify the type of notification
 const (
-	NotificationBinanceConnect = iota
-	NotificationIntegrationStart
-	NotificationIntegrationFinish
-	NotificationPayWithdraw
-	NotificationPayDeposit
-	NotificationSwap
-	NotificationVault
-	NotificationWalletConnect
+	NOTIFICATION_BINANCE_CONNECT = iota
+	NOTIFICATION_INTEGRATION_START
+	NOTIFICATION_INTEGRATION_FINISH
+	NOTIFICATION_PAY_WITHDRAW
+	NOTIFICATION_PAY_DEPOSIT
+	NOTIFICATION_SWAP
+	NOTIFICATION_VAULT
+	NOTIFICATION_WALLET_CONNECT
 )

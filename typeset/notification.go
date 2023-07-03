@@ -1,9 +1,11 @@
 package typeset
 
+type NotificationType int
+
 // Enum used to identify the type of notification
 const (
 	// NOTIFICATION_BINANCE_CONNECT: Notification when user connects to Binance
-	NOTIFICATION_BINANCE_CONNECT = iota
+	NOTIFICATION_BINANCE_CONNECT NotificationType = iota
 	// NOTIFICATION_BINANCE_DISCONNECT: later
 	NOTIFICATION_INTEGRATION_START
 	// NOTIFICATION_INTEGRATION_FINISH: later

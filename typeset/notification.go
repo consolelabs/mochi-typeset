@@ -20,4 +20,6 @@ const (
 	NOTIFICATION_VAULT NotificationType = 6
 	// NOTIFICATION_WALLET_CONNECT: Notification when user connect wallet
 	NOTIFICATION_WALLET_CONNECT NotificationType = 7
+	// NOTIFICATION_TRIGGER: Notification when user trigger
+	NOTIFICATION_TRIGGER NotificationType = 8
 )

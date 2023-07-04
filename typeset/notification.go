@@ -22,4 +22,8 @@ const (
 	NOTIFICATION_WALLET_CONNECT NotificationType = 7
 	// NOTIFICATION_TRIGGER: Notification when user trigger
 	NOTIFICATION_TRIGGER NotificationType = 8
+	// NOTIFICATION_VAULT_PROPOSAL: Notification when user create proposal
+	NOTIFICATION_VAULT_PROPOSAL
+	// NOTIFICATION_VAULT_VOTE: Notification when user vote proposal
+	NOTIFICATION_VAULT_VOTE
 )

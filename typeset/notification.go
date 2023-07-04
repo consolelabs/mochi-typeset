@@ -26,4 +26,6 @@ const (
 	NOTIFICATION_VAULT_PROPOSAL
 	// NOTIFICATION_VAULT_VOTE: Notification when user vote proposal
 	NOTIFICATION_VAULT_VOTE
+	// NOTIFICATION_VAULT_VOTE: Notification when user vote proposal
+	NOTIFICATION_EARN
 )

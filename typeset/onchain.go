@@ -18,7 +18,7 @@ type OnchainInstructions struct {
 	// Params: Parameters to pass to the function
 	Params []string `json:"params"`
 	// ChainId: Chain id to use (use within our database)
-	ChainId string `json:"chain_id"`
+	ChainId int64 `json:"chain_id"`
 	// Metadata: Metadata for the UI rendering
 	Metadata interface{} `json:"metadata"`
 }

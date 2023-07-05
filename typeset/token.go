@@ -5,7 +5,7 @@ type Token struct {
 	Symbol   string `json:"symbol"`
 	Decimals int    `json:"decimals"`
 	Address  string `json:"address"`
-	ChainId  string `json:"chain_id"`
+	ChainId  int64  `json:"chain_id"`
 }
 
 type TokenAmount struct {

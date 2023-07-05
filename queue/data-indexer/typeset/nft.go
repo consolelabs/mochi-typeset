@@ -18,4 +18,10 @@ type NftIndexMessage struct {
 	TokenId string `json:"token_id"`
 	// Amount: amount of the NFT
 	Amount int64 `json:"amount"`
+	// EventTime: time of event
+	EventTime int64 `json:"event_time"`
+	// TransactionHash: hash of the transaction
+	TransactionHash string `json:"transaction_hash"`
+	// BlockNumber: block number
+	BlockNumber int64 `json:"block_number"`
 }

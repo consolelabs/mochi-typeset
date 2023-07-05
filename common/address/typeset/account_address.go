@@ -1,6 +1,7 @@
 package typeset
 
 import (
+	"database/sql/driver"
 	"regexp"
 
 	"github.com/consolelabs/mochi-typeset/common/chain/typeset"
@@ -73,4 +74,26 @@ func roninCheck(hash string) bool {
 
 func bitcoinCheck(hash string) bool {
 	return false
+}
+
+func (a *AccountAddress) Scan(src interface{}) error {
+	if src == nil {
+		*a = AccountAddress{}
+		return nil
+	}
+	switch t := src.(type) {
+	case string:
+		addr := FromHash(t)
+		*a = *addr
+		return nil
+	default:
+		return nil
+	}
+}
+
+func (a *AccountAddress) Value() (driver.Value, error) {
+	if a == nil {
+		return "", nil
+	}
+	return a.hash, nil
 }

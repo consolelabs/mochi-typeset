@@ -8,8 +8,8 @@ import (
 )
 
 type AccountAddress struct {
-	hash  string
-	chain string
+	Hash  string
+	Chain string
 }
 
 // TODO: add test
@@ -22,41 +22,33 @@ func FromHash(hash string) *AccountAddress {
 	// check if evm address
 	if evm := evmCheck(hash); evm {
 		return &AccountAddress{
-			hash:  hash,
-			chain: typeset.CHAIN_TYPE_EVM,
+			Hash:  hash,
+			Chain: typeset.CHAIN_TYPE_EVM,
 		}
 	}
 
 	if solana := solanaCheck(hash); solana {
 		return &AccountAddress{
-			hash:  hash,
-			chain: typeset.CHAIN_TYPE_SOLANA,
+			Hash:  hash,
+			Chain: typeset.CHAIN_TYPE_SOLANA,
 		}
 	}
 
 	if ronin := roninCheck(hash); ronin {
 		return &AccountAddress{
-			hash:  hash,
-			chain: typeset.CHAIN_TYPE_RONIN,
+			Hash:  hash,
+			Chain: typeset.CHAIN_TYPE_RONIN,
 		}
 	}
 
 	if bitcoin := bitcoinCheck(hash); bitcoin {
 		return &AccountAddress{
-			hash:  hash,
-			chain: typeset.CHAIN_TYPE_BITCOIN,
+			Hash:  hash,
+			Chain: typeset.CHAIN_TYPE_BITCOIN,
 		}
 	}
 
 	return nil
-}
-
-func (a *AccountAddress) Hash() string {
-	return a.hash
-}
-
-func (a *AccountAddress) Chain() string {
-	return a.chain
 }
 
 func evmCheck(hash string) bool {
@@ -95,5 +87,15 @@ func (a *AccountAddress) Value() (driver.Value, error) {
 	if a == nil {
 		return "", nil
 	}
-	return a.hash, nil
+	return a.Hash, nil
+}
+
+func (a AccountAddress) MarshalJSON() ([]byte, error) {
+	return []byte(a.Hash), nil
+}
+
+func (a *AccountAddress) UnmarshalJSON(b []byte) error {
+	addr := FromHash(string(b))
+	*a = *addr
+	return nil
 }

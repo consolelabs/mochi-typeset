@@ -90,12 +90,12 @@ func (a *AccountAddress) Value() (driver.Value, error) {
 	return a.Hash, nil
 }
 
-func (a AccountAddress) MarshalJSON() ([]byte, error) {
-	return []byte(a.Hash), nil
-}
-
-func (a *AccountAddress) UnmarshalJSON(b []byte) error {
-	addr := FromHash(string(b))
-	*a = *addr
-	return nil
-}
+//func (a AccountAddress) MarshalJSON() ([]byte, error) {
+//	return []byte(a.Hash), nil
+//}
+//
+//func (a *AccountAddress) UnmarshalJSON(b []byte) error {
+//	addr := FromHash(string(b))
+//	*a = *addr
+//	return nil
+//}

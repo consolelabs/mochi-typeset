@@ -100,13 +100,11 @@ func (a *AccountAddress) Value() (driver.Value, error) {
 }
 
 func (a AccountAddress) MarshalJSON() ([]byte, error) {
-	quotedJSONValue := strconv.Quote(a.hash)
-	return []byte(quotedJSONValue), nil
+	return []byte(strconv.Quote(a.hash)), nil
 }
 
 func (a *AccountAddress) UnmarshalJSON(b []byte) error {
-	removeQuoteString := b[1 : len(b)-1]
-	addr := FromHash(string(removeQuoteString))
+	addr := FromHash(string(b[1 : len(b)-1]))
 	*a = *addr
 	return nil
 }

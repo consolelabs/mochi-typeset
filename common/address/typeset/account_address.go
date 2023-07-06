@@ -4,6 +4,7 @@ import (
 	"database/sql/driver"
 	"regexp"
 	"strconv"
+	"strings"
 
 	"github.com/consolelabs/mochi-typeset/common/chain/typeset"
 )
@@ -70,7 +71,15 @@ func solanaCheck(hash string) bool {
 }
 
 func roninCheck(hash string) bool {
-	return false
+	// if not start with ronin: return false
+	if !strings.HasPrefix(hash, "ronin:") {
+		return false
+	}
+	// len must be 46 = ronin:(6) + 40
+	if len(hash) != 46 {
+		return false
+	}
+	return true
 }
 
 func bitcoinCheck(hash string) bool {

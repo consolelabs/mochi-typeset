@@ -1,6 +1,11 @@
 package typeset
 
-import "github.com/consolelabs/mochi-typeset/common/address/typeset"
+import (
+	"encoding/json"
+
+	"github.com/consolelabs/mochi-typeset/common/address/typeset"
+	queue "github.com/consolelabs/mochi-typeset/queue"
+)
 
 // NftIndexMessage is a message for indexing NFT
 type NftIndexMessage struct {
@@ -24,4 +29,17 @@ type NftIndexMessage struct {
 	TransactionHash string `json:"transaction_hash"`
 	// BlockNumber: block number
 	BlockNumber int64 `json:"block_number"`
+}
+
+func ToNftMessage(msg *queue.KafkaMessage) (nft *NftIndexMessage) {
+	if msg.Type != "nft" {
+		return nil
+	}
+
+	err := json.Unmarshal(msg.Data, &nft)
+	if err != nil {
+		return nil
+	}
+
+	return nft
 }

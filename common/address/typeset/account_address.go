@@ -3,13 +3,14 @@ package typeset
 import (
 	"database/sql/driver"
 	"regexp"
+	"strconv"
 
 	"github.com/consolelabs/mochi-typeset/common/chain/typeset"
 )
 
 type AccountAddress struct {
-	Hash  string
-	Chain string
+	hash  string
+	chain string
 }
 
 // TODO: add test
@@ -22,33 +23,41 @@ func FromHash(hash string) *AccountAddress {
 	// check if evm address
 	if evm := evmCheck(hash); evm {
 		return &AccountAddress{
-			Hash:  hash,
-			Chain: typeset.CHAIN_TYPE_EVM,
+			hash:  hash,
+			chain: typeset.CHAIN_TYPE_EVM,
 		}
 	}
 
 	if solana := solanaCheck(hash); solana {
 		return &AccountAddress{
-			Hash:  hash,
-			Chain: typeset.CHAIN_TYPE_SOLANA,
+			hash:  hash,
+			chain: typeset.CHAIN_TYPE_SOLANA,
 		}
 	}
 
 	if ronin := roninCheck(hash); ronin {
 		return &AccountAddress{
-			Hash:  hash,
-			Chain: typeset.CHAIN_TYPE_RONIN,
+			hash:  hash,
+			chain: typeset.CHAIN_TYPE_RONIN,
 		}
 	}
 
 	if bitcoin := bitcoinCheck(hash); bitcoin {
 		return &AccountAddress{
-			Hash:  hash,
-			Chain: typeset.CHAIN_TYPE_BITCOIN,
+			hash:  hash,
+			chain: typeset.CHAIN_TYPE_BITCOIN,
 		}
 	}
 
 	return nil
+}
+
+func (a *AccountAddress) Hash() string {
+	return a.hash
+}
+
+func (a *AccountAddress) Chain() string {
+	return a.chain
 }
 
 func evmCheck(hash string) bool {
@@ -87,15 +96,17 @@ func (a *AccountAddress) Value() (driver.Value, error) {
 	if a == nil {
 		return "", nil
 	}
-	return a.Hash, nil
+	return a.hash, nil
 }
 
-//func (a AccountAddress) MarshalJSON() ([]byte, error) {
-//	return []byte(a.Hash), nil
-//}
-//
-//func (a *AccountAddress) UnmarshalJSON(b []byte) error {
-//	addr := FromHash(string(b))
-//	*a = *addr
-//	return nil
-//}
+func (a AccountAddress) MarshalJSON() ([]byte, error) {
+	quotedJSONValue := strconv.Quote(a.hash)
+	return []byte(quotedJSONValue), nil
+}
+
+func (a *AccountAddress) UnmarshalJSON(b []byte) error {
+	removeQuoteString := b[1 : len(b)-1]
+	addr := FromHash(string(removeQuoteString))
+	*a = *addr
+	return nil
+}

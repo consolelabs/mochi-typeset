@@ -1,5 +1,12 @@
 package typeset
 
+import (
+	"encoding/json"
+
+	"github.com/consolelabs/mochi-typeset/common/contract/hash/typeset"
+	queue "github.com/consolelabs/mochi-typeset/queue"
+)
+
 // EvmEvent: event log type for evm
 type EvmEvent struct {
 	ChainId          int64    `json:"chain_id"`
@@ -11,4 +18,17 @@ type EvmEvent struct {
 	Address          string   `json:"address"`
 	Data             []byte   `json:"data"`
 	Topics           []string `json:"topics"`
+}
+
+func ToEvmEvent(msg *queue.KafkaMessage) (event *EvmEvent) {
+	if msg.Type != typeset.TRANSFER_SINGLE_HASH {
+		return nil
+	}
+
+	err := json.Unmarshal(msg.Data, &event)
+	if err != nil {
+		return nil
+	}
+
+	return event
 }

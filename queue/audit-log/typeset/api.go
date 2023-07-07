@@ -1,5 +1,7 @@
 package typeset
 
+import "time"
+
 type AuditLogApi struct {
 	// Method: HTTP method GET, POST, PUT, DELETE
 	Method string `json:"method,omitempty"`
@@ -8,9 +10,9 @@ type AuditLogApi struct {
 	// RequestBody: request body
 	RequestBody []byte `json:"request_body,omitempty"`
 	// StatusCode: status code of the response
-	StatusCode int64 `json:"status_code,omitempty"`
+	StatusCode int `json:"status_code,omitempty"`
 	// Latency: process time
-	Latency float64 `json:"latency,omitempty"`
+	Latency time.Duration `json:"latency,omitempty"`
 	// RequestId: request id
 	RequestId string `json:"request_id,omitempty"`
 	// ResponseBody: response body

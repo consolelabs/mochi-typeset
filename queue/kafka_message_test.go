@@ -16,7 +16,7 @@ func Test_KafkaMessage_Validation(t *testing.T) {
 		{
 			name: "Test_valid",
 			msg: &KafkaMessage{
-				Type:   KafkaMessageTypeAudit,
+				Type:   KAFKA_MESSAGE_TYPE_AUDIT,
 				Topic:  "mochi.api",
 				Data:   []byte(`{"id":1,"last_updated_time":"2020-01-01T00:00:00Z","last_updated_block":1,"creation_block":1,"created_time":"2020-01-01T00:00:00Z","address":"0x1234567890","chain_id":1,"type":"mochi.api"}`),
 				Sender: "mochi.api",

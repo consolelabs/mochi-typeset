@@ -5,9 +5,9 @@ import "errors"
 type AuditLogType int
 
 const (
-	AuditLogMessageTypeApi AuditLogType = iota
-	AuditLogMessageTypeOnchain
-	AuditLogMessageTypeTwitter
+	AUDIT_LOG_MESSAGE_TYPE_API AuditLogType = iota
+	AUDIT_LOG_MESSAGE_TYPE_ONCHAIN
+	AUDIT_LOG_MESSAGE_TYPE_TWITTER
 )
 
 type AuditLogMessage struct {
@@ -17,11 +17,11 @@ type AuditLogMessage struct {
 
 func (m *AuditLogMessage) Validate() error {
 	switch m.Type {
-	case AuditLogMessageTypeApi:
+	case AUDIT_LOG_MESSAGE_TYPE_API:
 		return m.ApiLog.Validate()
-	case AuditLogMessageTypeOnchain:
+	case AUDIT_LOG_MESSAGE_TYPE_ONCHAIN:
 		return nil
-	case AuditLogMessageTypeTwitter:
+	case AUDIT_LOG_MESSAGE_TYPE_TWITTER:
 		return nil
 	default:
 		return errors.New("invalid audit log message type")

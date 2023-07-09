@@ -1,8 +1,8 @@
 package typeset
 
 import (
+	"database/sql/driver"
 	"encoding/json"
-	"fmt"
 )
 
 type Activity struct {
@@ -19,19 +19,21 @@ type StateChange struct {
 	Value string `json:"value"`
 }
 
-func (a *Activity) Scan(src interface{}) error {
+func (a *Activity) Scan(src any) error {
 	if src == nil {
-		*a = Activity{}
 		return nil
 	}
 	switch t := src.(type) {
 	case string:
-		fmt.Println("in acse srting")
-		return json.Unmarshal([]byte(t), &a)
+		return json.Unmarshal([]byte(t), a)
 	case []byte:
-		fmt.Println("in acse byte")
-		return json.Unmarshal(t, &a)
+		return json.Unmarshal(t, a)
 	default:
 		return nil
 	}
+}
+
+// Value implements the driver Valuer interface.
+func (n Activity) Value() (driver.Value, error) {
+	return json.Marshal(n)
 }

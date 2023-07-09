@@ -4,6 +4,7 @@ import "github.com/consolelabs/mochi-typeset/common/error/typeset"
 
 type KafkaMessageType string
 
+// TODO: update notification
 const (
 	KAFKA_MESSAGE_TYPE_AUDIT KafkaMessageType = "audit"
 )

@@ -1,3 +1,5 @@
+// docs: define type for notification
+// NEW TYPE MUST APPEND AT THE END OF THE LIST
 package typeset
 
 type NotificationType int

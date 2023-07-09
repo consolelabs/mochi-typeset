@@ -1,6 +1,9 @@
 package typeset
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 type Activity struct {
 	Type            ActivityType  `json:"type"`
@@ -23,9 +26,11 @@ func (a *Activity) Scan(src interface{}) error {
 	}
 	switch t := src.(type) {
 	case string:
+		fmt.Println("in acse srting")
 		return json.Unmarshal([]byte(t), src)
 	case []byte:
-		return json.Unmarshal(t, src)
+		fmt.Println("in acse byte")
+		return json.Unmarshal(t, &a)
 	default:
 		return nil
 	}

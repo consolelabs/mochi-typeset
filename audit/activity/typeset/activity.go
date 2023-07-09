@@ -27,7 +27,7 @@ func (a *Activity) Scan(src interface{}) error {
 	switch t := src.(type) {
 	case string:
 		fmt.Println("in acse srting")
-		return json.Unmarshal([]byte(t), src)
+		return json.Unmarshal([]byte(t), &a)
 	case []byte:
 		fmt.Println("in acse byte")
 		return json.Unmarshal(t, &a)

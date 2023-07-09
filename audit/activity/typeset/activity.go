@@ -4,6 +4,7 @@ type Activity struct {
 	Type            ActivityType  `json:"type"`
 	UserProfileId   string        `json:"user_profile_id"`
 	TargetProfileId string        `json:"target_profile_id"`
+	Content         string        `json:"content"`
 	Changes         []StateChange `json:"changes"`
 	Metadata        interface{}   `json:"metadata"`
 }

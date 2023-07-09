@@ -12,7 +12,6 @@ type Activity struct {
 	TargetProfileId string          `json:"target_profile_id"`
 	Content         string          `json:"content"`
 	Changes         StateChangeList `json:"changes"`
-	Metadata        interface{}     `json:"metadata"`
 }
 
 type StateChange struct {

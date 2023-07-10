@@ -28,6 +28,8 @@ const (
 	NOTIFICATION_VAULT_PROPOSAL
 	// NOTIFICATION_VAULT_VOTE: Notification when user vote proposal
 	NOTIFICATION_VAULT_VOTE
-	// NOTIFICATION_VAULT_VOTE: Notification when user vote proposal
+	// NOTIFICATION_EARN: Notification when user earn
 	NOTIFICATION_EARN
+	// NOTIFICATION_WALLET_TRACKING: Notification when user track wallet
+	NOTIFICATION_WALLET_TRACKING
 )

@@ -3,6 +3,7 @@ package typeset
 import (
 	"database/sql/driver"
 	"encoding/json"
+	"time"
 )
 
 type StateChangeList []StateChange
@@ -12,6 +13,8 @@ type Activity struct {
 	TargetProfileId string          `json:"target_profile_id"`
 	Content         string          `json:"content"`
 	Changes         StateChangeList `json:"changes"`
+	CreatedAt       time.Time       `json:"created_at"`
+	UpdatedAt       time.Time       `json:"updated_at"`
 }
 
 type StateChange struct {

@@ -17,5 +17,8 @@ type WalletTrackingMetadata struct {
 	ProfileId     string                     `json:"profile_id"`
 	ChainType     string                     `json:"chain_type"`
 	WalletAddress string                     `json:"wallet_address"`
+	WalletAlias   string                     `json:"wallet_alias"`
+	Amount        typeset.TokenAmount        `json:"amount"`
+	Token         typeset.Token              `json:"token"`
 	Transaction   *blockchain.EvmTransaction `json:"transaction"`
 }

@@ -15,9 +15,11 @@ type NotifierMessage struct {
 // WalletTrackingMetadata is the metadata for wallet tracking notification
 type WalletTrackingMetadata struct {
 	ProfileId     string                     `json:"profile_id"`
-	ChainType     string                     `json:"chain_type"`
+	ChainId       int64                      `json:"chain_id"`
 	WalletAddress string                     `json:"wallet_address"`
+	TxHash        string                     `json:"tx_hash"`
 	WalletAlias   string                     `json:"wallet_alias"`
+	IsSender      bool                       `json:"is_sender"`
 	Amount        typeset.TokenAmount        `json:"amount"`
 	Token         typeset.Token              `json:"token"`
 	Transaction   *blockchain.EvmTransaction `json:"transaction"`

@@ -8,11 +8,13 @@ import (
 
 type StateChangeList []StateChange
 type Activity struct {
+	Id              int64           `json:"id"`
 	Type            ActivityType    `json:"type"`
 	UserProfileId   string          `json:"user_profile_id"`
 	TargetProfileId string          `json:"target_profile_id"`
 	Content         string          `json:"content"`
 	Changes         StateChangeList `json:"changes"`
+	Status          string          `json:"status"`
 	CreatedAt       time.Time       `json:"created_at"`
 	UpdatedAt       time.Time       `json:"updated_at"`
 }

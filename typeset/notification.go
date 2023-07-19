@@ -32,6 +32,6 @@ const (
 	NOTIFICATION_EARN
 	// NOTIFICATION_WALLET_TRACKING: Notification when user track wallet
 	NOTIFICATION_WALLET_TRACKING
-	// NOTIFICATION_DISCORD_CONNECT: Notification when user connect discord
-	NOTIFICATION_DISCORD_CONNECT
+	// NOTIFICATION_SOCIAL_CONNECT: Notification when user connect social account
+	NOTIFICATION_SOCIAL_CONNECT
 )

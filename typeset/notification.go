@@ -34,4 +34,6 @@ const (
 	NOTIFICATION_WALLET_TRACKING
 	// NOTIFICATION_SOCIAL_CONNECT: Notification when user connect social account
 	NOTIFICATION_SOCIAL_CONNECT
+	// NOTIFICATION_PAY_TRANSFER_REQUEST: Notification when user receives new transfer request from an application
+	NOTIFICATION_PAY_TRANSFER_REQUEST
 )

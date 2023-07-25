@@ -36,4 +36,6 @@ const (
 	NOTIFICATION_SOCIAL_CONNECT
 	// NOTIFICATION_PAY_TRANSFER_REQUEST: Notification when user receives new transfer request from an application
 	NOTIFICATION_PAY_TRANSFER_REQUEST
+	// NOTIFICATION_TIP
+	NOTIFICATION_TIP
 )

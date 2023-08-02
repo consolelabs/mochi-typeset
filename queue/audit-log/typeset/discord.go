@@ -7,7 +7,7 @@ type AuditLogDiscord struct {
 			Id       string `json:"id,omitempty"`
 			IsBot    bool   `json:"is_bot,omitempty"`
 			Username string `json:"username,omitempty"`
-		} `json:"from,omitempty"`
+		} `json:"author,omitempty"`
 		Channel struct {
 			Id    string `json:"id,omitempty"`
 			Title string `json:"title,omitempty"`

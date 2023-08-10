@@ -11,4 +11,6 @@ const (
 	TRANSACTION_ACTION_TRANSFER TransactionAction = "transfer"
 	// TRANSACTION_ACTION_SWAP: Swap action
 	TRANSACTION_ACTION_SWAP TransactionAction = "swap"
+	// TRANSACTION_ACTION_AIRDROP: Airdrop action
+	TRANSACTION_ACTION_AIRDROP TransactionAction = "airdrop"
 )

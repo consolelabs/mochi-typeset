@@ -13,4 +13,6 @@ const (
 	TRANSACTION_ACTION_SWAP TransactionAction = "swap"
 	// TRANSACTION_ACTION_AIRDROP: Airdrop action
 	TRANSACTION_ACTION_AIRDROP TransactionAction = "airdrop"
+	// TRANSACTION_ACTION_REFUND: Refund action (for failed on-chain txns)
+	TRANSACTION_ACTION_REFUND TransactionAction = "refund"
 )

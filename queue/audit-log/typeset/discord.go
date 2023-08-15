@@ -23,6 +23,8 @@ type AuditLogDiscord struct {
 		Date int64  `json:"date,omitempty"`
 		Text string `json:"text,omitempty"`
 	} `json:"message,omitempty"`
+	EventType string `json:"event_type,omitempty"`
+	Payload   string `json:"payload,omitempty"`
 }
 
 func (a *AuditLogApi) AuditLogDiscord() error {

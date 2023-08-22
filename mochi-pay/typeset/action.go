@@ -15,4 +15,6 @@ const (
 	TRANSACTION_ACTION_AIRDROP TransactionAction = "airdrop"
 	// TRANSACTION_ACTION_REFUND: Refund action (for failed on-chain txns)
 	TRANSACTION_ACTION_REFUND TransactionAction = "refund"
+	// TRANSACTION_ACTION_VAULT_TRANSFER: Vault transfer action
+	TRANSACTION_ACTION_VAULT_TRANSFER TransactionAction = "vault_transfer"
 )

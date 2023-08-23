@@ -40,4 +40,6 @@ const (
 	NOTIFICATION_TIP
 	// NOTIFICATION_PAY_REQUEST: Notification when user create paylink/payme
 	NOTIFICATION_PAY_REQUEST
+	// NOTIFICATION_ONBOARDING_START: Notification when user use /start command on the first time
+	NOTIFICATION_ONBOARDING_START
 )

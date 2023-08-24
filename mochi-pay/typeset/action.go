@@ -17,4 +17,6 @@ const (
 	TRANSACTION_ACTION_REFUND TransactionAction = "refund"
 	// TRANSACTION_ACTION_VAULT_TRANSFER: Vault transfer action
 	TRANSACTION_ACTION_VAULT_TRANSFER TransactionAction = "vault_transfer"
+	// TRANSACTION_ACTION_PAYLINK: Paylink action
+	TRANSACTION_ACTION_PAYLINK TransactionAction = "paylink"
 )

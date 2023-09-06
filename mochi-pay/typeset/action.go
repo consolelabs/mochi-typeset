@@ -19,6 +19,8 @@ const (
 	TRANSACTION_ACTION_VAULT_TRANSFER TransactionAction = "vault_transfer"
 	// TRANSACTION_ACTION_PAYLINK: Paylink action
 	TRANSACTION_ACTION_PAYLINK TransactionAction = "paylink"
+	// TRANSACTION_ACTION_PAYME: Payme action
+	TRANSACTION_ACTION_PAYME TransactionAction = "payme"
 	// TRANSACTION_ACTION_SWEEP: Sweep token action
 	TRANSACTION_ACTION_SWEEP TransactionAction = "sweep"
 )

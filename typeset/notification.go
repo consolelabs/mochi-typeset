@@ -42,4 +42,6 @@ const (
 	NOTIFICATION_PAY_REQUEST
 	// NOTIFICATION_ONBOARDING_START: Notification when user use /start command on the first time
 	NOTIFICATION_ONBOARDING_START
+	// NOTIFICATION_NEW_CHANGELOG: Notification when new changelog is public
+	NOTIFICATION_NEW_CHANGELOG
 )

@@ -44,4 +44,6 @@ const (
 	NOTIFICATION_ONBOARDING_START
 	// NOTIFICATION_NEW_CHANGELOG: Notification when new changelog is public
 	NOTIFICATION_NEW_CHANGELOG
+	// NOTIFICATION_KEY_PRICE_CHANGE: Notification when receive price change message
+	NOTIFICATION_KEY_PRICE_CHANGE
 )

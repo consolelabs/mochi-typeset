@@ -46,4 +46,6 @@ const (
 	NOTIFICATION_NEW_CHANGELOG
 	// NOTIFICATION_KEY_PRICE_CHANGE: Notification when receive price change message
 	NOTIFICATION_KEY_PRICE_CHANGE
+	// NOTIFICATION_KEY_NEW_TRANSACTION: Notification when receive new transaction message
+	NOTIFICATION_KEY_NEW_TRANSACTION
 )

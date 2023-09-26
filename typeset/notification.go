@@ -48,6 +48,8 @@ const (
 	NOTIFICATION_KEY_PRICE_CHANGE
 	// NOTIFICATION_KEY_NEW_TRANSACTION: Notification when receive new transaction message
 	NOTIFICATION_KEY_NEW_TRANSACTION
-	// NOTIFICATION_PAY_REQUEST: Notification when there's an update on paylink
+	// NOTIFICATION_PAY_LINK: Notification when there's an update on paylink
 	NOTIFICATION_PAY_LINK
+	// NOTIFICATION_PAY_ME: Notification when there's an update on payme
+	NOTIFICATION_PAY_ME
 )

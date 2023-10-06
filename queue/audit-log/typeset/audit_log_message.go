@@ -10,6 +10,7 @@ const (
 	AUDIT_LOG_MESSAGE_TYPE_TWITTER
 	AUDIT_LOG_MESSAGE_TYPE_TELEGRAM
 	AUDIT_LOG_MESSAGE_TYPE_DISCORD
+	AUDIT_LOG_MESSAGE_TYPE_LOGIN
 )
 
 type AuditLogMessage struct {
@@ -17,6 +18,7 @@ type AuditLogMessage struct {
 	ApiLog      *AuditLogApi      `json:"api_log,omitempty"`
 	TelegramLog *AuditLogTelegram `json:"telegram_log,omitempty"`
 	DiscordLog  *AuditLogDiscord  `json:"discord_log,omitempty"`
+	LoginLog    *AuditLogLogin    `json:"login_log,omitempty"`
 }
 
 func (m *AuditLogMessage) Validate() error {
@@ -30,6 +32,8 @@ func (m *AuditLogMessage) Validate() error {
 	case AUDIT_LOG_MESSAGE_TYPE_TELEGRAM:
 		return nil
 	case AUDIT_LOG_MESSAGE_TYPE_DISCORD:
+		return nil
+	case AUDIT_LOG_MESSAGE_TYPE_LOGIN:
 		return nil
 	default:
 		return errors.New("invalid audit log message type")

@@ -15,6 +15,12 @@ type AuditLogTelegram struct {
 		} `json:"chat,omitempty"`
 		Date int64  `json:"date,omitempty"`
 		Text string `json:"text,omitempty"`
+
+		// Mentions contains list of users mentioned in the telegram message/command
+		Mentions []struct {
+			UserId   int64  `json:"user_id,omitempty"`
+			Username string `json:"user_name,omitempty"`
+		} `json:"mentions,omitempty"`
 	} `json:"message,omitempty"`
 }
 

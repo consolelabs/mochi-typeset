@@ -18,7 +18,7 @@ type AuditLogTelegram struct {
 
 		// Mentions contains list of users mentioned in the telegram message/command
 		Mentions []struct {
-			UserId   int64  `json:"user_id,omitempty"`
+			UserId   string `json:"user_id,omitempty"`
 			Username string `json:"user_name,omitempty"`
 		} `json:"mentions,omitempty"`
 	} `json:"message,omitempty"`

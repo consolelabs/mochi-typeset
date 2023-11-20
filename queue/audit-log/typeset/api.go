@@ -17,6 +17,8 @@ type AuditLogApi struct {
 	RequestId string `json:"request_id,omitempty"`
 	// ResponseBody: response body
 	ResponseBody []byte `json:"response_body,omitempty"`
+	// Host: host of the request
+	Host string
 }
 
 func (a *AuditLogApi) Validate() error {

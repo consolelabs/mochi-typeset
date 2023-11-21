@@ -11,14 +11,20 @@ const (
 	AUDIT_LOG_MESSAGE_TYPE_TELEGRAM
 	AUDIT_LOG_MESSAGE_TYPE_DISCORD
 	AUDIT_LOG_MESSAGE_TYPE_LOGIN
+	AUDIT_LOG_MESSAGE_TYPE_BOT_GM
+	AUDIT_LOG_MESSAGE_TYPE_BOT_INVITE_TRACKER
+	AUDIT_LOG_MESSAGE_TYPE_BOT_NEW_ROLE_ASSIGN
 )
 
 type AuditLogMessage struct {
-	Type        AuditLogType      `json:"type"`
-	ApiLog      *AuditLogApi      `json:"api_log,omitempty"`
-	TelegramLog *AuditLogTelegram `json:"telegram_log,omitempty"`
-	DiscordLog  *AuditLogDiscord  `json:"discord_log,omitempty"`
-	LoginLog    *AuditLogLogin    `json:"login_log,omitempty"`
+	Type             AuditLogType           `json:"type"`
+	ApiLog           *AuditLogApi           `json:"api_log,omitempty"`
+	TelegramLog      *AuditLogTelegram      `json:"telegram_log,omitempty"`
+	DiscordLog       *AuditLogDiscord       `json:"discord_log,omitempty"`
+	LoginLog         *AuditLogLogin         `json:"login_log,omitempty"`
+	GmLog            *AuditLogGM            `json:"gm_log,omitempty"`
+	InviteTrackerLog *AuditLogInviteTracker `json:"invite_tracker_log,omitempty"`
+	NewRoleAssignLog *AuditLogNewRoleAssign `json:"new_role_assign_log,omitempty"`
 }
 
 func (m *AuditLogMessage) Validate() error {
@@ -34,6 +40,12 @@ func (m *AuditLogMessage) Validate() error {
 	case AUDIT_LOG_MESSAGE_TYPE_DISCORD:
 		return nil
 	case AUDIT_LOG_MESSAGE_TYPE_LOGIN:
+		return nil
+	case AUDIT_LOG_MESSAGE_TYPE_BOT_GM:
+		return nil
+	case AUDIT_LOG_MESSAGE_TYPE_BOT_INVITE_TRACKER:
+		return nil
+	case AUDIT_LOG_MESSAGE_TYPE_BOT_NEW_ROLE_ASSIGN:
 		return nil
 	default:
 		return errors.New("invalid audit log message type")

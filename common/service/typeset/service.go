@@ -7,4 +7,5 @@ const (
 	SERVICE_DATA_DOS       = "data.dos"
 	SERVICE_DATA_BINANCE   = "data.binance"
 	SERVICE_DATA_TELEMETRY = "data.telemetry"
+	SERVICE_TONO_API       = "tono.api"
 )

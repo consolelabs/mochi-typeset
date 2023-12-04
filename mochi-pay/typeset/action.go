@@ -23,4 +23,8 @@ const (
 	TRANSACTION_ACTION_PAYME TransactionAction = "payme"
 	// TRANSACTION_ACTION_SWEEP: Sweep token action
 	TRANSACTION_ACTION_SWEEP TransactionAction = "sweep"
+	// TRANSACTION_ACTION_INTERNAL_WITHDRAW: Internal withdrawal
+	TRANSACTION_ACTION_INTERNAL_WITHDRAW TransactionAction = "internal_withdraw"
+	// TRANSACTION_ACTION_INTERNAL_DEPOSIT: Internal deposit
+	TRANSACTION_ACTION_INTERNAL_DEPOSIT TransactionAction = "internal_deposit"
 )

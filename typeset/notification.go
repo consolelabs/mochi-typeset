@@ -52,4 +52,8 @@ const (
 	NOTIFICATION_PAY_LINK
 	// NOTIFICATION_PAY_ME: Notification when there's an update on payme
 	NOTIFICATION_PAY_ME
+	// NOTIFICATION_PAY_INTERNAL_WITHDRAW: Notification when owner withdraws from an app
+	NOTIFICATION_PAY_INTERNAL_WITHDRAW
+	// NOTIFICATION_PAY_INTERNAL_DEPOSIT: Notification when owner deposits to an app
+	NOTIFICATION_PAY_INTERNAL_DEPOSIT
 )

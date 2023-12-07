@@ -1,0 +1,11 @@
+.env
+bin
+.secret
+.DS_Store
+.misc
+.vscode
+.idea/
+vendor/
+tmp/
+torch.svg
+node_modules/

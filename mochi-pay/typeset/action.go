@@ -23,8 +23,10 @@ const (
 	TRANSACTION_ACTION_PAYME TransactionAction = "payme"
 	// TRANSACTION_ACTION_SWEEP: Sweep token action
 	TRANSACTION_ACTION_SWEEP TransactionAction = "sweep"
-	// TRANSACTION_ACTION_INTERNAL_WITHDRAW: Internal withdrawal
+	// TRANSACTION_ACTION_INTERNAL_WITHDRAW: Withdraw from application's balance to owner's
 	TRANSACTION_ACTION_INTERNAL_WITHDRAW TransactionAction = "internal_withdraw"
-	// TRANSACTION_ACTION_INTERNAL_DEPOSIT: Internal deposit
+	// TRANSACTION_ACTION_INTERNAL_DEPOSIT: Deposit to application from owner's balance
 	TRANSACTION_ACTION_INTERNAL_DEPOSIT TransactionAction = "internal_deposit"
+	// TRANSACTION_ACTION_EXTERNAL_TRANSFER: Transfer from an external wallet to a mochi profile
+	TRANSACTION_ACTION_EXTERNAL_TRANSFER TransactionAction = "external_transfer"
 )

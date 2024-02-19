@@ -44,10 +44,6 @@ const (
 	NOTIFICATION_ONBOARDING_START
 	// NOTIFICATION_NEW_CHANGELOG: Notification when new changelog is public
 	NOTIFICATION_NEW_CHANGELOG
-	// NOTIFICATION_KEY_PRICE_CHANGE: Notification when receive price change message
-	NOTIFICATION_KEY_PRICE_CHANGE
-	// NOTIFICATION_KEY_NEW_TRANSACTION: Notification when receive new transaction message
-	NOTIFICATION_KEY_NEW_TRANSACTION
 	// NOTIFICATION_PAY_LINK: Notification when there's an update on paylink
 	NOTIFICATION_PAY_LINK
 	// NOTIFICATION_PAY_ME: Notification when there's an update on payme

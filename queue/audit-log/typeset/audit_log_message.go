@@ -18,6 +18,7 @@ const (
 	AUDIT_LOG_MESSAGE_TYPE_BOT_QUEST_COMPLETED
 	AUDIT_LOG_MESSAGE_TYPE_BOT_CHANNEL_SETUP
 	AUDIT_LOG_MESSAGE_TYPE_BOT_ROLE_SETUP
+	AUDIT_LOG_MESSAGE_TYPE_EVENT_LOG
 )
 
 type AuditLogMessage struct {
@@ -33,6 +34,7 @@ type AuditLogMessage struct {
 	QuestCompletedLog *AuditLogQuestCompleted `json:"quest_completed_log,omitempty"`
 	ChannelSetupLog   *AuditLogChannelSetup   `json:"channel_setup_log,omitempty"`
 	RoleSetupLog      *AuditLogRoleSetup      `json:"role_setup_log,omitempty"`
+	EventLog          *EventLog               `json:"event_log,omitempty"`
 }
 
 func (m *AuditLogMessage) Validate() error {
@@ -62,6 +64,8 @@ func (m *AuditLogMessage) Validate() error {
 	case AUDIT_LOG_MESSAGE_TYPE_BOT_CHANNEL_SETUP:
 		return nil
 	case AUDIT_LOG_MESSAGE_TYPE_BOT_ROLE_SETUP:
+		return nil
+	case AUDIT_LOG_MESSAGE_TYPE_EVENT_LOG:
 		return nil
 
 	default:
